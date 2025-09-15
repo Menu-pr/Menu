@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu.PR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+        .menu-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            color: #000000;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .menu-container.dark {
+            background: #1a1a1a;
+            color: #e5e7eb;
+            border: 1px solid #4b5563;
+        }
+        .menu-container.dark .section-header {
+            color: #93c5fd;
+        }
+        .menu-container.dark .price {
+            color: #d1d5db;
+        }
+        .section-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2563eb;
+            text-transform: uppercase;
+        }
+        .section-header:first-of-type {
+            margin-top: 0;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .menu-item.dark {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .menu-item-name {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .price {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #6b7280;
+        }
+        .menu-container.dark .footer-note {
+            color: #9ca3af;
+        }
+        .divider {
+            height: 1px;
+            background-color: #d1d5db;
+            margin: 1.5rem 0;
+        }
+        .menu-container.dark .divider {
+            background-color: #4b5563;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center py-8">
+
+    <div class="fixed top-0 left-0 right-0 p-4 space-x-4 bg-white/50 backdrop-blur-sm z-50 flex justify-center items-center rounded-b-lg">
+        <select id="theme-select" class="p-2 border rounded-lg bg-white text-gray-900">
+            <option value="light">Light Theme</option>
+            <option value="dark">Dark Theme</option>
+        </select>
+    </div>
+
+    <div id="menu-content" class="menu-container mt-20 sm:mt-0">
+        <div class="flex flex-col h-full">
+            <!-- Header -->
+            <div class="flex items-start justify-between">
+                <h1 id="menu-title" class="text-4xl sm:text-7xl font-extrabold tracking-tight uppercase leading-none">MENU</h1>
+            </div>
+
+            <!-- Body - Responsive Grid -->
+            <div class="flex-grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 md:gap-x-12 mt-8 md:mt-12">
+                <div class="flex flex-col">
+                    <h2 class="section-header">Special Discount Flowers</h2>
+                    <ul>
+                        <li class="menu-item"><span class="menu-item-name">1g</span><span class="price">$10</span></li>
+                        <li class="menu-item"><span class="menu-item-name">3.5g</span><span class="price">$25</span></li>
+                        <li class="menu-item"><span class="menu-item-name">7g</span><span class="price">$45</span></li>
+                        <li class="menu-item"><span class="menu-item-name">14g</span><span class="price">$75</span></li>
+                        <li class="menu-item"><span class="menu-item-name">28g</span><span class="price">$140</span></li>
+                    </ul>
+                    <h2 class="section-header">Premium Flowers</h2>
+                    <ul>
+                        <li class="menu-item"><span class="menu-item-name">1g</span><span class="price">$15</span></li>
+                        <li class="menu-item"><span class="menu-item-name">3.5g</span><span class="price">$40</span></li>
+                        <li class="menu-item"><span class="menu-item-name">7g</span><span class="price">$70</span></li>
+                        <li class="menu-item"><span class="menu-item-name">14g</span><span class="price">$110</span></li>
+                        <li class="menu-item"><span class="menu-item-name">28g</span><span class="price">$200</span></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col">
+                    <h2 class="section-header">Zazza</h2>
+                    <ul>
+                        <li class="menu-item"><span class="menu-item-name">1g</span><span class="price">$20</span></li>
+                        <li class="menu-item"><span class="menu-item-name">3.5g</span><span class="price">$65</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Pre-roll Blunt Zazza: 0.6g</span><span class="price">$15</span></li>
+                        <li class="menu-item"><span class="menu-item-name">Pre-roll Blunt Zazza: 1.2g</span><span class="price">$25</span></li>
+                    </ul>
+                    <h2 class="section-header">Kief</h2>
+                    <ul>
+                        <li class="menu-item"><span class="menu-item-name">1g</span><span class="price">$12</span></li>
+                        <li class="menu-item"><span class="menu-item-name">2g</span><span class="price">$20</span></li>
+                    </ul>
+                    <h2 class="section-header">Pre-roll Joints</h2>
+                    <ul>
+                        <li class="menu-item"><span class="menu-item-name">0.5g</span><span class="price">$5</span></li>
+                        <li class="menu-item"><span class="menu-item-name">1g</span><span class="price">$10</span></li>
+                    </ul>
+                    <h2 class="section-header">Pre-roll Blunt — Wood Filter</h2>
+                    <ul>
+                        <li class="menu-item"><span class="menu-item-name">1.2g each</span><span class="price">$12</span></li>
+                    </ul>
+                </div>
+                
+                <div class="flex flex-col">
+                    <h2 class="section-header">Pre-roll Blunt — Glass Filter</h2>
+                    <ul>
+                        <li class="menu-item"><span class="menu-item-name">1.2g each</span><span class="price">$15</span></li>
+                    </ul>
+                    <h2 class="section-header">Pre-roll Blunt — Ceramic Filter</h2>
+                    <ul>
+                        <li class="menu-item"><span class="menu-item-name">2g</span><span class="price">$25</span></li>
+                    </ul>
+                    <h2 class="section-header">Edible</h2>
+                    <ul>
+                        <li class="menu-item"><span class="menu-item-name">EYE Candy 100mg chocolate</span><span class="price">$12</span></li>
+                    </ul>
+                    <h2 class="section-header">Boutique Disposable Oil Cartridge</h2>
+                    <ul>
+                        <li class="menu-item"><span class="menu-item-name">3g / 3 flavors THC Diamonds</span><span class="price">$100</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-8 md:mt-12">
+                <div class="text-center text-sm font-light leading-relaxed">
+                    <p>Free delivery on orders $50+</p>
+                    <p>Ask us if you need wraps, pre-roll papers, or lighters.</p>
+                    <div class="divider"></div>
+                    <p>21+ Only • Licensed Dispensary • Consume Responsibly</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const themeSelect = document.getElementById('theme-select');
+        const menuContainer = document.getElementById('menu-content');
+        const body = document.body;
+
+        function updateTheme() {
+            const selectedTheme = themeSelect.value;
+            
+            if (selectedTheme === 'dark') {
+                menuContainer.classList.add('dark');
+                body.classList.add('bg-gray-900');
+            } else {
+                menuContainer.classList.remove('dark');
+                body.classList.remove('bg-gray-900');
+            }
+        }
+
+        themeSelect.addEventListener('change', updateTheme);
+        
+        // Initial setup for light theme
+        updateTheme();
+    </script>
+</body>
+</html>
+
